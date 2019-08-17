@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ejemplo con vue</title>
+</head>
+<body>
+    
+<div id="app">
+    <h1>{{titulo}}</h1>
+
+    <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
+    <button @click="agregarFruta">Agregar</button>
+
+    <!-- COmo esun array debemos usar un siclo for y lo ponemos en una lista -->
+    <ul>
+        <li v-for="fruta of frutas"> <!-- v-for es el ciclo for para vue -->
+            <input type="number" v-model.number="fruta.cantidad">
+            {{fruta.nombre}}
+            <button @click="fruta.cantidad++"> + </button>
+            <span v-if="fruta.cantidad === 0"> - sin stock</span> <!-- v-if es el if() de vue -->
+        </li>
+    </ul>
+    <h4>TOTAL: {{sumarFrutas}} </h4>
+
+</div>
+
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/01.js"></script>
+
+</body>
+</html>
