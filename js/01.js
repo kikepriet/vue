@@ -16,13 +16,13 @@ const app = new Vue({
             this.frutas.push({
                 nombre: this.nuevaFruta, cantidad: 0
             });
-            this.nuevaFruta = "";
+            this.nuevaFruta = ""; // reseteamos el input de nuevaFruta despues de la función
         }
     },
     computed: {
         sumarFrutas () {
-            this.total = 0;
-            for (fruta of this.frutas){
+            this.total = 0; // igualamos la variable a cero
+            for (fruta of this.frutas){ // hacemos un bucle for para recorrer el arreglo de frutas
                 this.total = this.total + fruta.cantidad;
             }
             return this.total;
